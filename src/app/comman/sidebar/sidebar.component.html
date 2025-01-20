@@ -1,50 +1,57 @@
 <div class="sidebar" [ngClass]="{'collapsed': isCollapsed}">
+  <!-- Fixed header -->
   <div class="logo-container">
     <button class="toggle-btn" (click)="toggleSidebar()">«</button>
   </div>
 
-  <div class="menu-section">
-    <h3 *ngIf="!isCollapsed">PAGES</h3>
-    <div *ngIf="isCollapsed" class="meatballs-menu">
-      <i class="fas fa-ellipsis-h"></i>
-    </div>
-    <div *ngFor="let item of menuItems">
-      <div class="menu-item" (click)="toggleItem(item)" [class.expanded]="item.expanded">
-        <i class="fas" [ngClass]="item.icon"></i>
-        <span *ngIf="!isCollapsed">{{ item.title }}</span>
-        <i *ngIf="item.children && !isCollapsed" class="fas fa-chevron-down arrow"></i>
+  <!-- Scrollable content wrapper -->
+  <div class="sidebar-content">
+    <!-- PAGES Section -->
+    <div class="menu-section">
+      <h3 *ngIf="!isCollapsed">PAGES</h3>
+      <div *ngIf="isCollapsed" class="meatballs-menu">
+        <i class="fas fa-ellipsis-h"></i>
       </div>
-      <div class="submenu" *ngIf="item.children && item.expanded">
-        <a *ngFor="let child of item.children" href="#" class="menu-item">
-          <span>{{child.title}}</span>
-        </a>
+      <div *ngFor="let item of menuItems">
+        <div class="menu-item" (click)="toggleItem(item)" [class.expanded]="item.expanded">
+          <i class="fas" [ngClass]="item.icon"></i>
+          <span *ngIf="!isCollapsed">{{ item.title }}</span>
+          <i *ngIf="item.children && !isCollapsed" class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="submenu" *ngIf="item.children && item.expanded && !isCollapsed">
+          <a *ngFor="let child of item.children" href="#" class="menu-item">
+            <span>{{child.title}}</span>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="menu-section">
-    <h3 *ngIf="!isCollapsed">TOOLS & COMPONENTS</h3>
-    <div *ngIf="isCollapsed" class="meatballs-menu">
-      <i class="fas fa-ellipsis-h"></i>
-    </div>
-    <div *ngFor="let item of toolItems">
-      <div class="menu-item" (click)="toggleItem(item)" [class.expanded]="item.expanded">
-        <i class="fas" [ngClass]="item.icon"></i>
-        <span *ngIf="!isCollapsed">{{ item.title }}</span>
-        <i *ngIf="item.children && !isCollapsed" class="fas fa-chevron-down arrow"></i>
+    <!-- TOOLS & COMPONENTS Section -->
+    <div class="menu-section">
+      <h3 *ngIf="!isCollapsed">TOOLS & COMPONENTS</h3>
+      <div *ngIf="isCollapsed" class="meatballs-menu">
+        <i class="fas fa-ellipsis-h"></i>
       </div>
-      <div class="submenu" *ngIf="item.children && item.expanded">
-        <a *ngFor="let child of item.children" href="#" class="menu-item">
-          <span>{{child.title}}</span>
-        </a>
+      <div *ngFor="let item of toolItems">
+        <div class="menu-item" (click)="toggleItem(item)" [class.expanded]="item.expanded">
+          <i class="fas" [ngClass]="item.icon"></i>
+          <span *ngIf="!isCollapsed">{{ item.title }}</span>
+          <i *ngIf="item.children && !isCollapsed" class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="submenu" *ngIf="item.children && item.expanded && !isCollapsed">
+          <a *ngFor="let child of item.children" href="#" class="menu-item">
+            <span>{{child.title}}</span>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="menu-section">
-    <h3 *ngIf="!isCollapsed">PLUGIN & ADDONS</h3>
-    <div *ngIf="isCollapsed" class="meatballs-menu">
-      <i class="fas fa-ellipsis-h"></i>
+    <!-- PLUGIN & ADDONS Section -->
+    <div class="menu-section">
+      <h3 *ngIf="!isCollapsed">PLUGIN & ADDONS</h3>
+      <div *ngIf="isCollapsed" class="meatballs-menu">
+        <i class="fas fa-ellipsis-h"></i>
+      </div>
     </div>
   </div>
 </div>

@@ -87,4 +87,85 @@
   display: none;
 }
 
+.sidebar {
+  width: 260px;
+  background-color: white;
+  height: 100vh;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Add this */
+}
 
+.sidebar.collapsed {
+  width: 80px;
+  padding: 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-shrink: 0; /* Add this */
+}
+
+/* Add a wrapper for scrollable content */
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #666 transparent;
+}
+
+/* Customize scrollbar */
+.sidebar-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 4px;
+}
+
+.menu-section {
+  margin-bottom: 30px;
+  text-align: left; /* Changed from center */
+  padding-right: 10px; /* Add space for scrollbar */
+}
+
+.menu-section h3 {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 15px;
+  padding-left: 15px; /* Align with menu items */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.submenu {
+  padding-left: 35px; /* Indent submenu items */
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.submenu .menu-item {
+  padding: 8px 15px; /* Smaller padding for submenu items */
+}
