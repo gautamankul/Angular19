@@ -1,0 +1,1 @@
+1. install fontawesome and add on angular.json sytle

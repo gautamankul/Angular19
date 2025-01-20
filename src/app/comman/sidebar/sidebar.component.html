@@ -1,0 +1,47 @@
+<div class="sidebar">
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="Smart HTML Elements" class="logo">
+      <button class="toggle-btn">«</button>
+    </div>
+
+    <a href="#" class="menu-item dashboard">
+      <i class="fas fa-th-large"></i>
+      <span>Dashboard</span>
+    </a>
+
+    <div class="menu-section">
+      <h3>PAGES</h3>
+      <div *ngFor="let item of menuItems">
+        <div class="menu-item" (click)="toggleItem(item)" [class.expanded]="item.expanded">
+          <i class="fas" [ngClass]="item.icon"></i>
+          <span>{{item.title}}</span>
+          <i *ngIf="item.children" class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="submenu" *ngIf="item.children && item.expanded">
+          <a *ngFor="let child of item.children" href="#" class="menu-item">
+            <span>{{child.title}}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <h3>TOOLS & COMPONENTS</h3>
+      <div *ngFor="let item of toolItems">
+        <div class="menu-item" (click)="toggleItem(item)" [class.expanded]="item.expanded">
+          <i class="fas" [ngClass]="item.icon"></i>
+          <span>{{item.title}}</span>
+          <i *ngIf="item.children" class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="submenu" *ngIf="item.children && item.expanded">
+          <a *ngFor="let child of item.children" href="#" class="menu-item">
+            <span>{{child.title}}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <h3>PLUGIN & ADDONS</h3>
+    </div>
+  </div>
