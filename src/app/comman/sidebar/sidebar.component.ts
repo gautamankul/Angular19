@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 interface MenuItem {
@@ -18,6 +18,11 @@ interface MenuItem {
 })
 
 export class SidebarComponent {
+  isCollapsed: any;
+  
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+}
 
   menuItems: MenuItem[] = [
     {

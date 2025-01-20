@@ -1,78 +1,90 @@
 .sidebar {
-    width: 260px;
-    background-color: white;
-    height: 100vh;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  }
+  width: 260px;
+  background-color: white;
+  height: 100vh;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
 
-  .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
+.sidebar.collapsed {
+  width: 80px;
+  padding: 10px;
+}
 
-  .logo {
-    height: 30px;
-  }
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
 
-  .toggle-btn {
-    border: none;
-    background: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #666;
-  }
+.toggle-btn {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
 
-  .menu-section {
-    margin-bottom: 30px;
-  }
+.menu-section {
+  margin-bottom: 30px;
+  text-align: center;
+}
 
-  .menu-section h3 {
-    color: #666;
-    font-size: 12px;
-    margin-bottom: 15px;
-  }
+.menu-section h3 {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
 
-  .menu-item {
-    display: flex;
-    align-items: center;
-    padding: 12px 15px;
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 5px;
-  }
+.menu-section .meatballs-menu {
+  font-size: 18px;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
 
-  .menu-item:hover {
-    background-color: #f5f5f5;
-  }
+.menu-section .meatballs-menu i {
+  font-size: 20px;
+}
 
-  .menu-item i {
-    margin-right: 10px;
-    width: 20px;
-    color: #666;
-  }
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
 
-  .menu-item .arrow {
-    margin-left: auto;
-    transition: transform 0.3s;
-  }
+.menu-item:hover {
+  background-color: #f5f5f5;
+}
 
-  .menu-item.expanded .arrow {
-    transform: rotate(180deg);
-  }
+.menu-item i {
+  margin-right: 10px;
+  width: 20px;
+  color: #666;
+}
 
-  .submenu {
-    margin-left: 20px;
-  }
+.menu-item .arrow {
+  margin-left: auto;
+  transition: transform 0.3s;
+}
 
-  .submenu .menu-item {
-    padding: 8px 15px;
-  }
+.menu-item.expanded .arrow {
+  transform: rotate(180deg);
+}
 
-  .dashboard {
-    margin-bottom: 30px;
-  }
+.sidebar.collapsed .menu-item span {
+  display: none;
+}
+
+
