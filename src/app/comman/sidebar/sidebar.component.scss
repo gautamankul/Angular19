@@ -21,6 +21,19 @@
   margin-bottom: 30px;
 }
 
+.logo {
+  height: 45px;
+  margin-right: 10px;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo-container.hide-logo .logo {
+  display: none;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
 .toggle-btn {
   border: none;
   background: none;

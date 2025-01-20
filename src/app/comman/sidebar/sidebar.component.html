@@ -1,6 +1,7 @@
 <div class="sidebar" [ngClass]="{'collapsed': isCollapsed}">
   <!-- Fixed header -->
-  <div class="logo-container">
+  <div class="logo-container" [ngClass]="{'hide-logo': isCollapsed}">
+    <img src="https://i.imgur.com/UVkDEDP.png" alt="Smart HTML Elements" class="logo">
     <button class="toggle-btn" (click)="toggleSidebar()">«</button>
   </div>
 
